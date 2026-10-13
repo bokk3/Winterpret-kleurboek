@@ -136,66 +136,62 @@ def create_coloring_page(page_data, images_dir):
     
     image_path = find_image_for_page(images_dir, page_num)
     
-    # Bepaal het beschikbare vak voor de tekening (bovenste 72% van de pagina)
-    art_box_x1 = MARGIN + 60
-    art_box_y1 = MARGIN + 40
-    art_box_x2 = PAGE_WIDTH - MARGIN - 60
-    art_box_y2 = int(PAGE_HEIGHT * 0.72)
-    max_w = art_box_x2 - art_box_x1
-    max_h = art_box_y2 - art_box_y1
+    # Grotere afbeelding: minder marge rondom (tot 2000x2000 voor 1:1)
+    art_box_y1 = 95
+    max_w = 2250
+    max_h = 2000
     
     if image_path:
         try:
             art = Image.open(image_path).convert("RGB")
             orig_w, orig_h = art.size
             
-            # Behoud de exacte beeldverhouding (aspect ratio) zodat niets vervormd wordt!
+            # Behoud de exacte beeldverhouding (aspect ratio)
             ratio = min(max_w / orig_w, max_h / orig_h)
             new_w = int(orig_w * ratio)
             new_h = int(orig_h * ratio)
             
             art_resized = art.resize((new_w, new_h), Image.Resampling.LANCZOS)
             
-            # Plaats de afbeelding exact gecentreerd in het kader
             paste_x = (PAGE_WIDTH - new_w) // 2
             paste_y = art_box_y1 + (max_h - new_h) // 2
             
             img.paste(art_resized, (paste_x, paste_y))
-            # Subtiel buitenkader
-            draw.rounded_rectangle([(paste_x, paste_y), (paste_x + new_w, paste_y + new_h)], radius=20, outline=(20, 20, 20), width=5)
+            draw.rounded_rectangle([(paste_x, paste_y), (paste_x + new_w, paste_y + new_h)], radius=20, outline=(25, 25, 25), width=5)
             status_text = f"[OK] Afbeelding geladen: {os.path.basename(image_path)}"
         except Exception as e:
             status_text = f"[FOUT] Kon {image_path} niet laden: {e}"
-            draw.rounded_rectangle([(art_box_x1, art_box_y1), (art_box_x2, art_box_y2)], radius=25, outline=(40, 40, 40), width=6)
+            draw.rounded_rectangle([(150, art_box_y1), (PAGE_WIDTH - 150, art_box_y1 + max_h)], radius=25, outline=(40, 40, 40), width=6)
     else:
-        # Placeholder voor nog te genereren pagina's
         status_text = "[PLACEHOLDER]"
-        draw.rounded_rectangle([(art_box_x1, art_box_y1), (art_box_x2, art_box_y2)], radius=25, outline=(50, 50, 50), width=6)
+        draw.rounded_rectangle([(150, art_box_y1), (PAGE_WIDTH - 150, art_box_y1 + max_h)], radius=25, outline=(50, 50, 50), width=6)
         font_ph_title = get_font(75, bold=True)
         font_ph_sub = get_font(44, bold=False)
-        draw.text((PAGE_WIDTH // 2, art_box_y1 + 400), f"Kleurplaat {page_num}", fill=(50, 50, 50), font=font_ph_title, anchor="mm")
-        draw.text((PAGE_WIDTH // 2, art_box_y1 + 520), f"« {title} »", fill=(70, 70, 70), font=font_ph_sub, anchor="mm")
-        draw.text((PAGE_WIDTH // 2, art_box_y1 + 750), f"[ Sla afbeelding op als: images/Pagina_{page_num:02d}.png ]", fill=(140, 140, 140), font=font_ph_sub, anchor="mm")
-        draw_corner_snowflakes(draw, PAGE_WIDTH, int(PAGE_HEIGHT * 0.75), margin=180)
+        draw.text((PAGE_WIDTH // 2, art_box_y1 + 450), f"Kleurplaat {page_num}", fill=(50, 50, 50), font=font_ph_title, anchor="mm")
+        draw.text((PAGE_WIDTH // 2, art_box_y1 + 570), f"« {title} »", fill=(70, 70, 70), font=font_ph_sub, anchor="mm")
+        draw.text((PAGE_WIDTH // 2, art_box_y1 + 800), f"[ Sla afbeelding op als: images/Pagina_{page_num:02d}.png ]", fill=(140, 140, 140), font=font_ph_sub, anchor="mm")
+        draw_corner_snowflakes(draw, PAGE_WIDTH, art_box_y1 + max_h, margin=180)
 
-    # 2. Voorleesvak onderaan de pagina
-    text_box_y1 = int(PAGE_HEIGHT * 0.75)
-    text_box_y2 = PAGE_HEIGHT - MARGIN - 65
+    # 2. Tekstvak onderaan: lager, breder en compacter
+    tb_x1 = 150
+    tb_x2 = PAGE_WIDTH - 150
+    tb_y1 = 2125
+    tb_y2 = 2415
     draw.rounded_rectangle(
-        [(art_box_x1, text_box_y1), (art_box_x2, text_box_y2)],
-        radius=25, outline=(175, 175, 175), width=4
+        [(tb_x1, tb_y1), (tb_x2, tb_y2)],
+        radius=22, outline=(175, 175, 175), width=3
     )
     
-    font_story_title = get_font(48, bold=True)
-    draw.text((PAGE_WIDTH // 2, text_box_y1 + 65), f"•  {title}  •", fill=(35, 35, 35), font=font_story_title, anchor="mm")
+    font_story_title = get_font(44, bold=True)
+    draw.text((PAGE_WIDTH // 2, tb_y1 + 52), f"•  {title}  •", fill=(35, 35, 35), font=font_story_title, anchor="mm")
     
-    font_story_text = get_font(42, bold=False)
+    font_story_text = get_font(38, bold=False)
     words = voorleestekst.split()
     lines = []
     current_line = []
     for word in words:
         test_line = " ".join(current_line + [word])
-        if len(test_line) > 52:
+        if len(test_line) > 78:
             lines.append(" ".join(current_line))
             current_line = [word]
         else:
@@ -203,13 +199,13 @@ def create_coloring_page(page_data, images_dir):
     if current_line:
         lines.append(" ".join(current_line))
         
-    line_y = text_box_y1 + 155
+    line_y = tb_y1 + 130
     for line in lines:
         draw.text((PAGE_WIDTH // 2, line_y), line, fill=(45, 45, 45), font=font_story_text, anchor="mm")
-        line_y += 65
+        line_y += 56
         
-    font_pg = get_font(36, bold=False)
-    draw.text((PAGE_WIDTH // 2, PAGE_HEIGHT - 60), f"- {page_num} -", fill=(120, 120, 120), font=font_pg, anchor="mm")
+    font_pg = get_font(34, bold=False)
+    draw.text((PAGE_WIDTH // 2, 2478), f"- {page_num} -", fill=(120, 120, 120), font=font_pg, anchor="mm")
     
     return img, status_text
 

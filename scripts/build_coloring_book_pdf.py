@@ -68,7 +68,6 @@ def create_title_page():
     draw.line([(PAGE_WIDTH // 2 - 400, 1060), (PAGE_WIDTH // 2 + 400, 1060)], fill=(120, 150, 180), width=6)
     draw.text((PAGE_WIDTH // 2, 1180), tag_text, fill=(80, 80, 80), font=font_tag, anchor="mm")
     
-    # Kadertje voor naam
     name_box_y = 1650
     draw.rounded_rectangle(
         [(PAGE_WIDTH // 2 - 600, name_box_y), (PAGE_WIDTH // 2 + 600, name_box_y + 320)],
@@ -107,6 +106,26 @@ def create_colophon_page():
         
     return img
 
+def find_image_for_page(images_dir, page_num):
+    """Zoekt flexibel naar de afbeelding van een pagina, ongeacht hoofdletters."""
+    candidates = [
+        f"pagina_{page_num:02d}.png",
+        f"Pagina_{page_num:02d}.png",
+        f"pagina_{page_num:02d}.jpg",
+        f"Pagina_{page_num:02d}.jpg",
+        f"pagina_{page_num}.png",
+        f"Pagina_{page_num}.png",
+        f"pagina_{page_num}.jpg",
+        f"Pagina_{page_num}.jpg",
+        f"page_{page_num:02d}.png",
+        f"Page_{page_num:02d}.png"
+    ]
+    for c in candidates:
+        p = os.path.join(images_dir, c)
+        if os.path.exists(p):
+            return p
+    return None
+
 def create_coloring_page(page_data, images_dir):
     img = Image.new("RGB", (PAGE_WIDTH, PAGE_HEIGHT), color=(255, 255, 255))
     draw = ImageDraw.Draw(img)
@@ -115,48 +134,60 @@ def create_coloring_page(page_data, images_dir):
     voorleestekst = page_data["voorleestekst"]
     title = page_data["title"]
     
-    # 1. Zoek naar gegenereerde afbeelding
-    image_filename = f"pagina_{page_num:02d}.png"
-    image_path = os.path.join(images_dir, image_filename)
-    if not os.path.exists(image_path):
-        image_path = os.path.join(images_dir, f"pagina_{page_num:02d}.jpg")
+    image_path = find_image_for_page(images_dir, page_num)
     
-    # Bepaal het vak voor de tekening (bovenste 72% van de pagina)
-    art_box_x1 = MARGIN + 80
-    art_box_y1 = MARGIN + 60
-    art_box_x2 = PAGE_WIDTH - MARGIN - 80
+    # Bepaal het beschikbare vak voor de tekening (bovenste 72% van de pagina)
+    art_box_x1 = MARGIN + 60
+    art_box_y1 = MARGIN + 40
+    art_box_x2 = PAGE_WIDTH - MARGIN - 60
     art_box_y2 = int(PAGE_HEIGHT * 0.72)
-    art_box_w = art_box_x2 - art_box_x1
-    art_box_h = art_box_y2 - art_box_y1
+    max_w = art_box_x2 - art_box_x1
+    max_h = art_box_y2 - art_box_y1
     
-    if os.path.exists(image_path):
+    if image_path:
         try:
             art = Image.open(image_path).convert("RGB")
-            art = art.resize((art_box_w, art_box_h), Image.Resampling.LANCZOS)
-            img.paste(art, (art_box_x1, art_box_y1))
-            draw.rounded_rectangle([(art_box_x1, art_box_y1), (art_box_x2, art_box_y2)], radius=25, outline=(0, 0, 0), width=6)
+            orig_w, orig_h = art.size
+            
+            # Behoud de exacte beeldverhouding (aspect ratio) zodat niets vervormd wordt!
+            ratio = min(max_w / orig_w, max_h / orig_h)
+            new_w = int(orig_w * ratio)
+            new_h = int(orig_h * ratio)
+            
+            art_resized = art.resize((new_w, new_h), Image.Resampling.LANCZOS)
+            
+            # Plaats de afbeelding exact gecentreerd in het kader
+            paste_x = (PAGE_WIDTH - new_w) // 2
+            paste_y = art_box_y1 + (max_h - new_h) // 2
+            
+            img.paste(art_resized, (paste_x, paste_y))
+            # Subtiel buitenkader
+            draw.rounded_rectangle([(paste_x, paste_y), (paste_x + new_w, paste_y + new_h)], radius=20, outline=(20, 20, 20), width=5)
+            status_text = f"[OK] Afbeelding geladen: {os.path.basename(image_path)}"
         except Exception as e:
-            print(f"Kon afbeelding {image_path} niet laden: {e}")
+            status_text = f"[FOUT] Kon {image_path} niet laden: {e}"
+            draw.rounded_rectangle([(art_box_x1, art_box_y1), (art_box_x2, art_box_y2)], radius=25, outline=(40, 40, 40), width=6)
     else:
-        # Schone peutervriendelijke placeholder
-        draw.rounded_rectangle([(art_box_x1, art_box_y1), (art_box_x2, art_box_y2)], radius=25, outline=(30, 30, 30), width=8)
-        font_ph_title = get_font(70, bold=True)
-        font_ph_sub = get_font(42, bold=False)
-        draw.text((PAGE_WIDTH // 2, art_box_y1 + 380), f"Kleurplaat {page_num}", fill=(50, 50, 50), font=font_ph_title, anchor="mm")
-        draw.text((PAGE_WIDTH // 2, art_box_y1 + 500), f"« {title} »", fill=(70, 70, 70), font=font_ph_sub, anchor="mm")
-        draw.text((PAGE_WIDTH // 2, art_box_y1 + 720), f"[ Sla je AI-tekening op als: images/pagina_{page_num:02d}.png ]", fill=(140, 140, 140), font=font_ph_sub, anchor="mm")
+        # Placeholder voor nog te genereren pagina's
+        status_text = "[PLACEHOLDER]"
+        draw.rounded_rectangle([(art_box_x1, art_box_y1), (art_box_x2, art_box_y2)], radius=25, outline=(50, 50, 50), width=6)
+        font_ph_title = get_font(75, bold=True)
+        font_ph_sub = get_font(44, bold=False)
+        draw.text((PAGE_WIDTH // 2, art_box_y1 + 400), f"Kleurplaat {page_num}", fill=(50, 50, 50), font=font_ph_title, anchor="mm")
+        draw.text((PAGE_WIDTH // 2, art_box_y1 + 520), f"« {title} »", fill=(70, 70, 70), font=font_ph_sub, anchor="mm")
+        draw.text((PAGE_WIDTH // 2, art_box_y1 + 750), f"[ Sla afbeelding op als: images/Pagina_{page_num:02d}.png ]", fill=(140, 140, 140), font=font_ph_sub, anchor="mm")
         draw_corner_snowflakes(draw, PAGE_WIDTH, int(PAGE_HEIGHT * 0.75), margin=180)
 
     # 2. Voorleesvak onderaan de pagina
-    text_box_y1 = int(PAGE_HEIGHT * 0.76)
-    text_box_y2 = PAGE_HEIGHT - MARGIN - 70
+    text_box_y1 = int(PAGE_HEIGHT * 0.75)
+    text_box_y2 = PAGE_HEIGHT - MARGIN - 65
     draw.rounded_rectangle(
         [(art_box_x1, text_box_y1), (art_box_x2, text_box_y2)],
-        radius=25, outline=(180, 180, 180), width=4
+        radius=25, outline=(175, 175, 175), width=4
     )
     
-    font_story_title = get_font(46, bold=True)
-    draw.text((PAGE_WIDTH // 2, text_box_y1 + 65), f"❄️ {title}", fill=(40, 40, 40), font=font_story_title, anchor="mm")
+    font_story_title = get_font(48, bold=True)
+    draw.text((PAGE_WIDTH // 2, text_box_y1 + 65), f"•  {title}  •", fill=(35, 35, 35), font=font_story_title, anchor="mm")
     
     font_story_text = get_font(42, bold=False)
     words = voorleestekst.split()
@@ -172,22 +203,22 @@ def create_coloring_page(page_data, images_dir):
     if current_line:
         lines.append(" ".join(current_line))
         
-    line_y = text_box_y1 + 150
+    line_y = text_box_y1 + 155
     for line in lines:
-        draw.text((PAGE_WIDTH // 2, line_y), line, fill=(50, 50, 50), font=font_story_text, anchor="mm")
+        draw.text((PAGE_WIDTH // 2, line_y), line, fill=(45, 45, 45), font=font_story_text, anchor="mm")
         line_y += 65
         
     font_pg = get_font(36, bold=False)
     draw.text((PAGE_WIDTH // 2, PAGE_HEIGHT - 60), f"- {page_num} -", fill=(120, 120, 120), font=font_pg, anchor="mm")
     
-    return img
+    return img, status_text
 
 def create_blank_back_page():
     img = Image.new("RGB", (PAGE_WIDTH, PAGE_HEIGHT), color=(255, 255, 255))
     draw = ImageDraw.Draw(img)
     draw_corner_snowflakes(draw, PAGE_WIDTH, PAGE_HEIGHT, margin=150)
     font_note = get_font(32, bold=False)
-    draw.text((PAGE_WIDTH // 2, PAGE_HEIGHT - 120), "❄️ Ruimte om je eigen wintertekening te maken! ❄️", fill=(200, 200, 200), font=font_note, anchor="mm")
+    draw.text((PAGE_WIDTH // 2, PAGE_HEIGHT - 120), "* Ruimte om je eigen wintertekening te maken! *", fill=(200, 200, 200), font=font_note, anchor="mm")
     return img
 
 def create_diploma_page():
@@ -203,7 +234,7 @@ def create_diploma_page():
     font_dip_sub = get_font(55, bold=False)
     font_dip_name = get_font(65, bold=True)
     
-    draw.text((PAGE_WIDTH // 2, 700), "⭐ KLEURDIPLOMA ⭐", fill=(20, 20, 20), font=font_dip_title, anchor="mm")
+    draw.text((PAGE_WIDTH // 2, 700), "* KLEURDIPLOMA *", fill=(20, 20, 20), font=font_dip_title, anchor="mm")
     draw.text((PAGE_WIDTH // 2, 880), "Hoera! Dit officiële winterdiploma is voor:", fill=(70, 70, 70), font=font_dip_sub, anchor="mm")
     
     draw.line([(PAGE_WIDTH // 2 - 600, 1150), (PAGE_WIDTH // 2 + 600, 1150)], fill=(80, 80, 80), width=4)
@@ -212,7 +243,7 @@ def create_diploma_page():
     draw.text((PAGE_WIDTH // 2, 1380), "Omdat jij alle avonturen van Beertje Bas & Eendje Pip", fill=(50, 50, 50), font=font_dip_sub, anchor="mm")
     draw.text((PAGE_WIDTH // 2, 1460), "zo prachtig hebt ingekleurd!", fill=(50, 50, 50), font=font_dip_sub, anchor="mm")
     
-    draw.text((PAGE_WIDTH // 2, 1750), "Pootje van Bas 🐾  &  Vleugeltje van Pip 🦆", fill=(60, 60, 60), font=font_dip_name, anchor="mm")
+    draw.text((PAGE_WIDTH // 2, 1750), "Liefs van Beertje Bas & Eendje Pip", fill=(60, 60, 60), font=font_dip_name, anchor="mm")
     
     return img
 
@@ -226,8 +257,6 @@ def build_pdf():
     
     front_cover_path = os.path.join(covers_dir, "front_cover_nl.jpg")
     back_cover_path = os.path.join(covers_dir, "back_cover_nl.jpg")
-    
-    os.makedirs(images_dir, exist_ok=True)
     
     with open(json_path, "r", encoding="utf-8") as f:
         pages_data = json.load(f)
@@ -254,9 +283,14 @@ def build_pdf():
     
     # 5. 24 Kleurplaten (enkelzijdig: Kleurplaat rechts, blanco links)
     blank_back = create_blank_back_page()
+    loaded_count = 0
     for p in pages_data:
-        print(f"- Pagina {p['page']}/24: {p['title']}")
-        coloring_page = create_coloring_page(p, images_dir)
+        coloring_page, status = create_coloring_page(p, images_dir)
+        if "[OK]" in status:
+            loaded_count += 1
+            print(f"- Pagina {p['page']:02d}/24: {p['title']} --> ECHTE AFBEELDING!")
+        else:
+            print(f"- Pagina {p['page']:02d}/24: {p['title']} (Placeholder)")
         pages.append(coloring_page)
         pages.append(blank_back)
         
@@ -270,6 +304,7 @@ def build_pdf():
     back_cover = load_or_create_cover(back_cover_path, is_back=True)
     pages.append(back_cover)
     
+    print(f"Resultaat: {loaded_count} van de 24 kleurplaten zijn succesvol geladen!")
     print(f"Totaal aantal pagina's in PDF: {len(pages)}")
     print(f"Opslaan naar {output_pdf}...")
     pages[0].save(
@@ -282,8 +317,6 @@ def build_pdf():
     print(f"[OK] Volledig kleurboek PDF klaar: {output_pdf}")
 
     # Genereer tevens een Amazon KDP Paperback Wrap Cover Spread
-    # Rugdikte voor 54 pagina's = ca. 0.122 inch (ca. 37 pixels bij 300 DPI)
-    # Totale breedte = Back Cover + Spine + Front Cover + Bleed (0.125 * 2)
     spine_px = 40
     bleed_px = int(0.125 * DPI) # 37 px
     spread_w = PAGE_WIDTH * 2 + spine_px + (bleed_px * 2)
@@ -301,9 +334,7 @@ def build_pdf():
     
     # Rugtekst (Spine)
     draw_spread = ImageDraw.Draw(spread)
-    font_spine = get_font(26, bold=True)
     spine_x = bleed_px + PAGE_WIDTH + (spine_px // 2)
-    # Lichte ruglijn
     draw_spread.line([(spine_x - spine_px//2, bleed_px), (spine_x - spine_px//2, bleed_px + PAGE_HEIGHT)], fill=(130, 160, 190), width=2)
     draw_spread.line([(spine_x + spine_px//2, bleed_px), (spine_x + spine_px//2, bleed_px + PAGE_HEIGHT)], fill=(130, 160, 190), width=2)
 

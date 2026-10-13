@@ -3,144 +3,192 @@
     "page": 1,
     "title": "De Eerste Sneeuwvlokjes",
     "voorleestekst": "Tik, tik, tik tegen het raam! Beertje Bas wrijft in zijn oogjes. Kijk Pip, de hele tuin is een wit poederparadijs!",
-    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no gradients, no grayscale. An adorable chubby baby teddy bear wearing cozy pajamas looking out of a round wooden bedroom window in awe at big fluffy snowflakes falling outside. A tiny cute duckling wearing a nightcap sits happily on the windowsill. Simple chunky shapes, preschool storybook coloring page for toddlers 3-5 years old, high contrast vector lines --ar 1:1"
+    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no gradients, no grayscale. An adorable chubby baby teddy bear wearing cozy pajamas looking out of a round wooden bedroom window in awe at big fluffy snowflakes falling outside. A tiny cute duckling wearing a nightcap sits happily on the windowsill. Simple chunky shapes, preschool storybook coloring page for toddlers 3-5 years old, high contrast vector lines --ar 1:1",
+    "achterkant_opdracht": "Teken wat jij het allerliefste buiten in de sneeuw ziet vallen!",
+    "zoek_vraagje": "Zoekvraagje: Kun jij de sterretjes op de pyjama van Bas vinden?"
   },
   {
     "page": 2,
     "title": "Warme Winterkleren Aantrekken",
     "voorleestekst": "Eerst onze warme kleren aan! Een dikke wollen trui voor Bas, en een grappige muts met een pompon voor kleine Pip.",
-    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute baby bear putting on a chunky warm knitted sweater, tiny cute duckling trying to pull on an oversized winter beanie with a big pompom, simple cheerful bedroom setting, very thick clean outlines for 3-5 year olds --ar 1:1"
+    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute baby bear putting on a chunky warm knitted sweater, tiny cute duckling trying to pull on an oversized winter beanie with a big pompom, simple cheerful bedroom setting, very thick clean outlines for 3-5 year olds --ar 1:1",
+    "achterkant_opdracht": "Ontwerp een hele mooie, vrolijke wintermuts met een reuzepompon!",
+    "zoek_vraagje": "Zoekvraagje: Waar zit het kleine teddybeertje verstopt?"
   },
   {
     "page": 3,
     "title": "Laarsjes en Wanten",
     "voorleestekst": "Pootjes in de winterlaarsjes! Wanten aan de handjes. 'Klaar voor de sneeuw!' kwaakt Pip vrolijk.",
-    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute baby bear pulling on round chunky winter snow boots, little duckling waving tiny mittens happily, big simple rounded shapes, coloring page for preschool kids --ar 1:1"
+    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute baby bear pulling on round chunky winter snow boots, little duckling waving tiny mittens happily, big simple rounded shapes, coloring page for preschool kids --ar 1:1",
+    "achterkant_opdracht": "Teken jouw eigen lievelingslaarsjes vol vrolijke streepjes of bolletjes!",
+    "zoek_vraagje": "Zoekvraagje: Hoeveel laarsjes zie je op de grond staan?"
   },
   {
     "page": 4,
     "title": "De Houten Slee uit de Schuur",
     "voorleestekst": "In het schuurtje staat de houten slee. Bas veegt de strootjes eraf. 'Vandaag gaan we glijden!'",
-    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute chubby baby bear rolling out a classic wooden pull sled from an open wooden shed door, cute little duckling hopping with excitement, bold vector line art, no texture --ar 1:1"
+    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute chubby baby bear rolling out a classic wooden pull sled from an open wooden shed door, cute little duckling hopping with excitement, bold vector line art, no texture --ar 1:1",
+    "achterkant_opdracht": "Teken jouw eigen droomslee! Heeft hij belletjes, kussens of vlaggetjes?",
+    "zoek_vraagje": "Zoekvraagje: Zie jij de spinnenwebjes in het hoekje van de schuur?"
   },
   {
     "page": 5,
     "title": "Pip Stapt In met Warme Choco",
     "voorleestekst": "Pip springt op de slee. Hij zit lekker zacht in een geruit dekentje, met een beker warme choco in zijn vleugels.",
-    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute little duckling sitting snugly on a wooden sled wrapped in a simple folded blanket, holding a warm cocoa mug with tiny steam swirl, baby bear holding the pull rope, thick outlines --ar 1:1"
+    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute little duckling sitting snugly on a wooden sled wrapped in a simple folded blanket, holding a warm cocoa mug with tiny steam swirl, baby bear holding the pull rope, thick outlines --ar 1:1",
+    "achterkant_opdracht": "Teken een grote dampende beker chocomelk met extra veel marshmallows!",
+    "zoek_vraagje": "Zoekvraagje: Welk sneeuwvlokje staat er op de beker van Pip?"
   },
   {
     "page": 6,
     "title": "Krakende Stapjes in de Sneeuw",
     "voorleestekst": "Knak, knisper, krak! De verse sneeuw kraakt onder de botjes van Bas. Kijk eens achterom naar onze diepe sporen!",
-    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute baby bear walking forward pulling sled in deep snow, leaving large cute paw print indentations in snow path, smiling duckling on sled, thick simple lines --ar 1:1"
+    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute baby bear walking forward pulling sled in deep snow, leaving large cute paw print indentations in snow path, smiling duckling on sled, thick simple lines --ar 1:1",
+    "achterkant_opdracht": "Teken grappige pootafdrukjes in de sneeuw: van een beer, eend of vogel!",
+    "zoek_vraagje": "Zoekvraagje: Tel eens hoeveel pootafdrukken Bas in de sneeuw maakte!"
   },
   {
     "page": 7,
     "title": "Hallo Lief Roodborstje!",
     "voorleestekst": "Op een besneeuwde tak zit een vogeltje met een rood buikje. 'Piep-piep,' zingt het vogeltje. 'Dag lieve vriendjes!'",
-    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute baby bear and little duckling waving hello at an adorable round chubby robin bird sitting on a snowy pine branch, large open shapes easy to color --ar 1:1"
+    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute baby bear and little duckling waving hello at an adorable round chubby robin bird sitting on a snowy pine branch, large open shapes easy to color --ar 1:1",
+    "achterkant_opdracht": "Teken een gezellig vogelhuisje vol zaadjes en besjes voor het vogeltje!",
+    "zoek_vraagje": "Zoekvraagje: Op welke tak zit het kleine roodborstje te zingen?"
   },
   {
     "page": 8,
     "title": "Plof! Sneeuw op de Berenneus",
     "voorleestekst": "Bas tikt zachtjes tegen een dennentak. Plof! Een zacht toefje sneeuw valt op zijn neus. Pip moet heel luid lachen: 'Kwek kwek!'",
-    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute baby bear with a funny round dollop of fluffy snow right on his nose looking cross-eyed with a smile, tiny duckling giggling, bold outlines for toddlers --ar 1:1"
+    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute baby bear with a funny round dollop of fluffy snow right on his nose looking cross-eyed with a smile, tiny duckling giggling, bold outlines for toddlers --ar 1:1",
+    "achterkant_opdracht": "Teken een grappig gek sneeuwmannetje dat op de neus van Bas past!",
+    "zoek_vraagje": "Zoekvraagje: Hoeveel sneeuwvlokjes vallen er rond het hoofd van Bas?"
   },
   {
     "page": 9,
     "title": "Samen een Reuzebol Rollen",
     "voorleestekst": "Handjes uit de mouwen! Rollen, rollen maar. De sneeuwbal groeit en groeit tot hij bijna even groot is als Pip!",
-    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute chubby baby bear and little duckling pushing together to roll a huge round snowball across snowy ground, simple playful scene, thick lines --ar 1:1"
+    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute chubby baby bear and little duckling pushing together to roll a huge round snowball across snowy ground, simple playful scene, thick lines --ar 1:1",
+    "achterkant_opdracht": "Teken de allergrootste sneeuwbal van de wereld, nog groter dan Bas!",
+    "zoek_vraagje": "Zoekvraagje: Wie duwt er het hardste mee: Bas of kleine Pip?"
   },
   {
     "page": 10,
     "title": "Meneer de Sneeuwman",
     "voorleestekst": "Drie grote bollen op elkaar. Een knapperige wortel als neus en twee steentjes als oogjes. Wat een vriendelijke sneeuwman!",
-    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute baby bear gently inserting a carrot nose onto a big happy round snowman, duckling placing a little top hat on snowman, thick clear coloring outlines --ar 1:1"
+    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute baby bear gently inserting a carrot nose onto a big happy round snowman, duckling placing a little top hat on snowman, thick clear coloring outlines --ar 1:1",
+    "achterkant_opdracht": "Geef Meneer de Sneeuwman een hele gekke feesthoed en een lange sjaal!",
+    "zoek_vraagje": "Zoekvraagje: Welke groente heeft de sneeuwman als neus?"
   },
   {
     "page": 11,
     "title": "De Zachte Sneeuwengel",
     "voorleestekst": "Ploemp! Bas laat zich achterover in de diepe sneeuw vallen. Wapper, wapper met de armen... Kijk, een echte beren-engel!",
-    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute baby bear lying on back in snow making a snow angel shape with arms outstretched, cheerful duckling jumping up and down happily, thick lines --ar 1:1"
+    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute baby bear lying on back in snow making a snow angel shape with arms outstretched, cheerful duckling jumping up and down happily, thick lines --ar 1:1",
+    "achterkant_opdracht": "Teken jouw eigen sneeuwengel in een bedje van witte sneeuwvlokken!",
+    "zoek_vraagje": "Zoekvraagje: Zie jij de vleugeltjes die Pip in de sneeuw wapperde?"
   },
   {
     "page": 12,
     "title": "Klimmen naar de Top",
     "voorleestekst": "Stapje voor stapje de heuvel op. Puffen en stappen! Bovenop zwaait Pip met zijn sjaal: 'We zijn er!'",
-    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute baby bear pulling wooden sled up a gentle rounded snowy hill, duckling sitting on top of the hill waving a scarf, simple landscape, bold line art --ar 1:1"
+    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute baby bear pulling wooden sled up a gentle rounded snowy hill, duckling sitting on top of the hill waving a scarf, simple landscape, bold line art --ar 1:1",
+    "achterkant_opdracht": "Teken een hele hoge heuvel met dennenboompjes en vlaggetjes op de top!",
+    "zoek_vraagje": "Zoekvraagje: Waar staat het kleine dennenboompje langs het wandelpad?"
   },
   {
     "page": 13,
     "title": "Zjoefff van de Heuvel!",
     "voorleestekst": "Goed vasthouden, Pip! Drie, twee, één... ZJOEFFF! De slee glijdt met een vaartje door de poedersneeuw. 'Joepie!'",
-    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute baby bear and little duckling riding wooden sled together sliding downhill with snowy splash and speed lines, wide happy smiles, thick outlines --ar 1:1"
+    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute baby bear and little duckling riding wooden sled together sliding downhill with snowy splash and speed lines, wide happy smiles, thick outlines --ar 1:1",
+    "achterkant_opdracht": "Teken kronkelende snelle sleepaadjes die van de heuvel af suizen!",
+    "zoek_vraagje": "Zoekvraagje: Wappert de warme sjaal van Bas naar voren of naar achteren?"
   },
   {
     "page": 14,
     "title": "Glijden op het Gladde Ijs",
     "voorleestekst": "Het kleine bosmeertje is bevroren en spiegelglad. Schuifel, schuifel... Pip glijdt op zijn buikje over het ijs!",
-    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Little duckling sliding happily on its tummy across smooth frozen ice pond, cute baby bear sliding carefully on both winter boots with arms balancing, bold lines --ar 1:1"
+    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Little duckling sliding happily on its tummy across smooth frozen ice pond, cute baby bear sliding carefully on both winter boots with arms balancing, bold lines --ar 1:1",
+    "achterkant_opdracht": "Teken vrolijke schaatsers of dansende dieren op de bevroren vijver!",
+    "zoek_vraagje": "Zoekvraagje: Hoeveel rietstengels zie je aan de rand van het ijs?"
   },
   {
     "page": 15,
     "title": "Trakteren aan het Eekhoorntje",
     "voorleestekst": "Ritsel, ritsel in de boom. Een pluizig eekhoorntje piept tevoorschijn. Bas geeft hem een grote hazelnoot.",
-    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute baby bear offering a big round hazelnut to an adorable fluffy squirrel sitting on a snow-covered tree log, duckling watching with wide eyes, thick lines --ar 1:1"
+    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute baby bear offering a big round hazelnut to an adorable fluffy squirrel sitting on a snow-covered tree log, duckling watching with wide eyes, thick lines --ar 1:1",
+    "achterkant_opdracht": "Teken een mandje vol lekkere nootjes en eikeltjes voor de bosdieren!",
+    "zoek_vraagje": "Zoekvraagje: Waar houdt het kleine eekhoorntje zijn nootje vast?"
   },
   {
     "page": 16,
     "title": "Een Warme Chocoladepauze",
     "voorleestekst": "Slurrrrrep! Samen op de slee genieten Bas en Pip van een warme slok. Zoet, warm en lekker knus.",
-    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute baby bear and little duckling sitting shoulder-to-shoulder on wooden sled both holding steaming mugs, happy cozy closed-eyes smiles, clean thick lines --ar 1:1"
+    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute baby bear and little duckling sitting shoulder-to-shoulder on wooden sled both holding steaming mugs, happy cozy closed-eyes smiles, clean thick lines --ar 1:1",
+    "achterkant_opdracht": "Teken een bordje vol heerlijke kerstkoekjes naast de warme chocolademelk!",
+    "zoek_vraagje": "Zoekvraagje: Hoeveel bekers warme drank zie je op het tafeltje?"
   },
   {
     "page": 17,
     "title": "Dennenappels Schikken",
     "voorleestekst": "Kijk wat een grote dennenappels! Bas en Pip leggen ze in een vrolijk patroon rond een klein boompje.",
-    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute baby bear and duckling placing large pine cones in a neat circle around a tiny baby pine tree in the snow, simple shapes for toddlers --ar 1:1"
+    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute baby bear and duckling placing large pine cones in a neat circle around a tiny baby pine tree in the snow, simple shapes for toddlers --ar 1:1",
+    "achterkant_opdracht": "Teken een mooie slinger met dennenappels, besjes en gouden sterren!",
+    "zoek_vraagje": "Zoekvraagje: Tel eens hoeveel dennenappels Bas al verzameld heeft!"
   },
   {
     "page": 18,
     "title": "Het Geheime Sparrenhutje",
     "voorleestekst": "Onder de takken van de reuzenspar is het heerlijk droog. Een geheim schuilplekje voor twee beste vriendjes!",
-    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute baby bear and little duckling sitting inside a cozy sheltered cave-like den under heavy snow-laden fir boughs, simple nature backdrop, bold line art --ar 1:1"
+    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute baby bear and little duckling sitting inside a cozy sheltered cave-like den under heavy snow-laden fir boughs, simple nature backdrop, bold line art --ar 1:1",
+    "achterkant_opdracht": "Teken jouw eigen geheime winterhutje met lichtjes en warme kussens!",
+    "zoek_vraagje": "Zoekvraagje: Zie je het dak van dennentakken boven Bas en Pip?"
   },
   {
     "page": 19,
     "title": "De Eerste Sterretjes",
     "voorleestekst": "De zon zakt achter de bergen. Aan de hemel verschijnt een vrolijke maansikkel en twinkelen de eerste sterren.",
-    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute baby bear walking in snow pointing up at a cute smiling cartoon crescent moon and four-pointed stars in sky, sleepy duckling riding on sled, bold lines --ar 1:1"
+    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute baby bear walking in snow pointing up at a cute smiling cartoon crescent moon and four-pointed stars in sky, sleepy duckling riding on sled, bold lines --ar 1:1",
+    "achterkant_opdracht": "Teken een donkere avondhemel vol met fonkelende sterren en een maantje!",
+    "zoek_vraagje": "Zoekvraagje: Hoeveel glinsterende sterretjes tel je aan de hemel?"
   },
   {
     "page": 20,
     "title": "Lichtjes in het Huisje",
     "voorleestekst": "Daar is ons huisje al! Achter de raampjes schijnt warm geel licht. Er kringelt vriendelijke rook uit de schoorsteen.",
-    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute fairy tale gingerbread-style cottage with thick snow blanket on roof, glowing round window panes, chimney puffing smoke clouds, bold storybook line art --ar 1:1"
+    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute fairy tale gingerbread-style cottage with thick snow blanket on roof, glowing round window panes, chimney puffing smoke clouds, bold storybook line art --ar 1:1",
+    "achterkant_opdracht": "Teken een gezellig winterhuisje met een rokende schoorsteen!",
+    "zoek_vraagje": "Zoekvraagje: Zie je het warme gele licht dat door de voordeur schijnt?"
   },
   {
     "page": 21,
     "title": "Welkom Thuis!",
     "voorleestekst": "Veeg je laarsjes maar goed af op het matje. Wat ruikt het binnen heerlijk naar kaneel en warmte!",
-    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute baby bear stomping snow off boots on a doormat in open cottage doorway, duckling taking off wet beanie, welcoming cozy home hall, thick bold lines --ar 1:1"
+    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute baby bear stomping snow off boots on a doormat in open cottage doorway, duckling taking off wet beanie, welcoming cozy home hall, thick bold lines --ar 1:1",
+    "achterkant_opdracht": "Teken een vrolijke welkomst-deurmat en een kapstok vol winterjassen!",
+    "zoek_vraagje": "Zoekvraagje: Waar zetten Bas en Pip hun natte laarsjes neer?"
   },
   {
     "page": 22,
     "title": "Natte Sokjes Drogen",
     "voorleestekst": "De natte sokjes en wanten hangen netjes aan een touwtje boven de knetterende houtkachel. Lekker warm!",
-    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute vintage potbelly wood stove, baby bear hanging small woolen socks on a drying string above it, little duckling warming feet on a rug, thick outlines --ar 1:1"
+    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute vintage potbelly wood stove, baby bear hanging small woolen socks on a drying string above it, little duckling warming feet on a rug, thick outlines --ar 1:1",
+    "achterkant_opdracht": "Teken een knapperend haardvuur met vrolijke sokjes aan een waslijntje!",
+    "zoek_vraagje": "Zoekvraagje: Hoeveel paar sokjes hangen er te drogen bij het vuur?"
   },
   {
     "page": 23,
     "title": "Het Prentenboek in de Luie Zetel",
     "voorleestekst": "Bas kruipt in de grote zachte leunstoel. Pip kruipt onder het fleecedekentje. Tijd voor een verhaaltje voor het slapengaan!",
-    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute baby bear sitting in a big comfy armchair reading a storybook, little duckling snuggled into a warm blanket on bear's lap listening sleepily, bold line art --ar 1:1"
+    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute baby bear sitting in a big comfy armchair reading a storybook, little duckling snuggled into a warm blanket on bear's lap listening sleepily, bold line art --ar 1:1",
+    "achterkant_opdracht": "Teken de voorkant van jouw eigen lievelingsboekje dat Bas en Pip lezen!",
+    "zoek_vraagje": "Zoekvraagje: Welk diertje zie je op de bladzijde van het prentenboek?"
   },
   {
     "page": 24,
     "title": "Slaap Lekker, Kleine Vriendjes",
     "voorleestekst": "Oogjes toe en snaveltje dicht. Buiten dwarrelt de sneeuw rustig verder. Droom zacht van nieuwe avonturen!",
-    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute baby bear and little duckling fast asleep tucked in a cozy wooden bed under a soft quilt, smiling moon visible through bedroom window, calm simple shapes --ar 1:1"
+    "krea_prompt": "Toddler coloring book page, black and white line art only, bold thick clean outlines, pure white background, no shading, no grayscale. Cute baby bear and little duckling fast asleep tucked in a cozy wooden bed under a soft quilt, smiling moon visible through bedroom window, calm simple shapes --ar 1:1",
+    "achterkant_opdracht": "Teken een zacht knuffeltje dat mee mag slapen onder het warme dekentje!",
+    "zoek_vraagje": "Zoekvraagje: Wie slaapt er al het allereerst: Bas of kleine Pip?"
   }
 ]
